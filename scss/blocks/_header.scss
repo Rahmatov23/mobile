@@ -4,12 +4,23 @@
     display: none;
 }
 .header{
-    @include mixins.flexify(space-between, center);
-    height: 10vh;
+    // @include mixins.flexify(space-between, center);
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    padding: 30px 0px 12px 0px;
+    top: 0;
+    z-index: 999999;
+    // height: 10vh;
     &__logo{
         &__img{
             display: block;
         }
+    }
+    &__box{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     &__navbar{
@@ -21,10 +32,6 @@
         @include mixins.flexify(initial, center);
         list-style: none;
         column-gap: 25px;
-        &__item{
-
-
-        }
 
         &__link{
             text-decoration: none;
@@ -56,6 +63,7 @@
 
 @media screen and (max-width: 1090px) {
     .header{
+        
         .nav{
             &__link{
                 font-size: 10px;
@@ -73,6 +81,7 @@
 // }
 @media screen and (max-width: 610px) {
     .header{
+        height: 15vh;
         .nav{
             display: none;
         }
@@ -130,12 +139,13 @@
         position: fixed;
         width: 100%;
         bottom: 0;
-        height: 90vh;
+        height: 85vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         background: #2C2830;
         padding: 20px;
+        z-index: 9;
         &--open{
             opacity: 1;
             visibility: visible;
